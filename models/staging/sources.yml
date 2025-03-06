@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: educate  
+    database: appdb  # Ensure this matches your actual database name
+    schema: public  
+    tables:
+      - name: Attendance
+        identifier: '"Attendance"'  
+      - name: Youth
+        identifier: '"Youth"'
+      - name: Venues
+        identifier: '"Venues"'
+      - name: Milestones
+        identifier: '"Milestones"'
+

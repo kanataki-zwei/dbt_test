@@ -1,0 +1,12 @@
+name: educate_project  # <== This is required! Give your project a name.
+version: "1.0"
+
+config-version: 2
+
+models:
+  educate_project:  # Match the name with your project
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+

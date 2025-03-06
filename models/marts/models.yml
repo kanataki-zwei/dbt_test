@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: attendance_analysis
+    description: "Aggregates participant attendance data to track engagement and dropout risk."
+    columns:
+      - name: youth_id
+        description: "Unique identifier for each participant."
+        tests:
+          - not_null
+          - unique
+      - name: total_sessions
+        description: "Total number of sessions attended by the participant."
+        tests:
+          - not_null
+      - name: sessions_attended
+        description: "Total count of sessions attended (marked as 1)."
+      - name: attendance_rate
+        description: "Percentage of attended sessions out of total sessions."
+      - name: dropout_status
+        description: "Indicates if a participant is at high dropout risk."
+
+  - name: venue_performance
+    description: "Analyzes attendance rates across different training venues."
+    columns:
+      - name: venue_id
+        description: "Unique identifier for each training venue."
+        tests:
+          - not_null
+          - unique
+      - name: training_venue
+        description: "Name of the training location."
+      - name: county
+        description: "County where the training venue is located."
+      - name: ward
+        description: "Ward where the training venue is located."
+      - name: total_attendances
+        description: "Total number of attendance records at this venue."
+      - name: total_present
+        description: "Total count of sessions attended by all participants at this venue."
+      - name: venue_attendance_rate
+        description: "Average attendance rate for this venue."
